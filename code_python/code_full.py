@@ -15,7 +15,6 @@ print(type(my_list))
 print(f"Valor de la posicion 4 de la tupla: {my_tupla[3]}", f"\ntamanio de tupla es {len(my_tupla)}",end="\n")
 print(f"Hello I am {name}, my username is {username}. This year is {year}. My size is {size/100} meters.")
 
-
         #DICCIONARIOS
 tupla = ("primero",2)
 myDictionary = {"name":"Gerson",14:"My birthday", "day":[14,"Enero","Ate"],tupla[1]: "Prueba de tupla"}
@@ -38,7 +37,6 @@ if election.lower() in list_courses: # or .upper()
 else:
     print("El curso "+str(election.lower())+" no existe")
 
-"""
         #BUCLES
 email = input("Ingrese su correo: ")
 
@@ -54,4 +52,32 @@ for i in email: #recorre cadenas, tuplas, listas, etc
 
 for i in range(1,10,2): #(inicio, fin-1, deCuantoEnCuanto)
     print(f"{i} \t {msg1} \t {msg2} \t {msg3}")
+
+"""
+        #FUNCIONES CONTINUE, PASS, BREAK
+msg = "Prueba"
+for i in "Gerson":
+    if i == "r":
+        continue #continue: ignora el código que le sigue y salta a lo siguiente.
+        estoNoFunciona
+        print("Hola mundo")
+        msg = "este es un mensaje"
+    print(str(i)+"\t"+str(msg))
+####################################
+class carrito:
+    pass #Es como si el código no existiese. Lo ignora totalmente. Permite crear funciones, clases, etc vacías
+                    #y asi evitar errores de sintaxis
+
+####################################
+word = input("Ingresa palabra: ")
+
+for i in word:
+    if i == "g":
+        band = True
+        break #break: rompe el programa o permite salir de un bucle. 
+        print("saliooo") #no lo lee porque ya salió con el break
+else:
+    band = False
+
+print(band)
 
