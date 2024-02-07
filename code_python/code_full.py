@@ -28,7 +28,6 @@ print(myDictionary)
 print(myDictionary.keys())
 print(myDictionary.values())
 
-"""
         #CONDICIONALES
 list_courses = ("calculo","estadistica","IA")
 
@@ -39,4 +38,20 @@ if election.lower() in list_courses: # or .upper()
 else:
     print("El curso "+str(election.lower())+" no existe")
 
+"""
+        #BUCLES
+email = input("Ingrese su correo: ")
+
+msg1, msg2 = "No hay @", "No hay ."
+
+for i in email: #recorre cadenas, tuplas, listas, etc
+    if i == "@":
+        msg1 = "hay @"
+    elif i == ".":
+        msg2 = "hay ."
+    else:
+        msg3 = "by Gerson"
+
+for i in range(1,10,2): #(inicio, fin-1, deCuantoEnCuanto)
+    print(f"{i} \t {msg1} \t {msg2} \t {msg3}")
 
