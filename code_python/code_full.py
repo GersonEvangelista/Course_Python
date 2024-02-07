@@ -15,7 +15,7 @@ print(type(my_list))
 print(f"Valor de la posicion 4 de la tupla: {my_tupla[3]}", f"\ntamanio de tupla es {len(my_tupla)}",end="\n")
 print(f"Hello I am {name}, my username is {username}. This year is {year}. My size is {size/100} meters.")
 
-"""
+
         #DICCIONARIOS
 tupla = ("primero",2)
 myDictionary = {"name":"Gerson",14:"My birthday", "day":[14,"Enero","Ate"],tupla[1]: "Prueba de tupla"}
@@ -27,5 +27,16 @@ print(myDictionary)
 #Metodos del diccionario
 print(myDictionary.keys())
 print(myDictionary.values())
+
+"""
+        #CONDICIONALES
+list_courses = ("calculo","estadistica","IA")
+
+election = input("Ingrese curso: ")
+
+if election.lower() in list_courses: # or .upper()
+    print("El curso es "+str(election.lower()))
+else:
+    print("El curso "+str(election.lower())+" no existe")
 
 
