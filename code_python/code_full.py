@@ -53,7 +53,6 @@ for i in email: #recorre cadenas, tuplas, listas, etc
 for i in range(1,10,2): #(inicio, fin-1, deCuantoEnCuanto)
     print(f"{i} \t {msg1} \t {msg2} \t {msg3}")
 
-"""
         #FUNCIONES CONTINUE, PASS, BREAK
 msg = "Prueba"
 for i in "Gerson":
@@ -80,4 +79,33 @@ else:
     band = False
 
 print(band)
+
+"""
+        #GENERADORES
+#Retornan de 1 en 1 los datos por medio de next() y ahorran memoria.
+def devuelve_potencias(num):
+    for i in range(num):
+        yield (i+1)**2
+
+potencias = devuelve_potencias(3) #es necesario para almacenar la data
+
+print(next(potencias)) #1
+print(next(potencias)) #4
+print(next(potencias)) #9
+
+#USO del yield from (para acceder a un subelemento)
+def return_words(*parameters): #El "*" indica que puede ser "n" parametros
+    for subElement in parameters: #Accediendo a elementos
+        yield from subElement #Retornando cada subelemento 
+
+result = return_words(["Gerson","chaev"], "Basilia", (15,28)) 
+
+print(next(result)) #Gerson
+print(next(result)) #Chaev
+print(next(result)) #B
+
+
+
+
+
 
