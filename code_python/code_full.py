@@ -80,7 +80,7 @@ else:
 
 print(band)
 
-"""
+
         #GENERADORES
 #Retornan de 1 en 1 los datos por medio de next() y ahorran memoria.
 def devuelve_potencias(num):
@@ -103,9 +103,40 @@ result = return_words(["Gerson","chaev"], "Basilia", (15,28))
 print(next(result)) #Gerson
 print(next(result)) #Chaev
 print(next(result)) #B
+"""
+        #EXCEPCIONES
+def operation():
+    try:
+        num1 = int(input("num1: "))
+        num2 = int(input("num2: "))
+        return (num1/num2)
+    except ValueError: #Los errores de excepción lo bota la consola
+        print("Ingresó un dato no numérico")
+    except ZeroDivisionError:
+        print("No es posible dividir entre 0")
+    finally: 
+        print("'Finally' siempre se ejecuta, pese a todo")
 
+print("Solución: "+str(operation()))
+print("Fin programa")
 
+#Uso del RAISE(provocar una excepcion)
+def eres_mayor(age):
+    if age<0:
+        raise ValueError("No hay edad negativa") #provocando excepcion
+    else:
+        if age<18:
+            print("Eres menor")
+        else:
+            print("Eres mayor")
 
+dato = int(input("Ingresa dato: "))
 
+try:
+    print(eres_mayor(dato))
+except ValueError as Edad_negativa: #alias de la excepcion
+    print(Edad_negativa)
+
+print("End program")
 
 
