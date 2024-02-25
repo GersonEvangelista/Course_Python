@@ -103,7 +103,7 @@ result = return_words(["Gerson","chaev"], "Basilia", (15,28))
 print(next(result)) #Gerson
 print(next(result)) #Chaev
 print(next(result)) #B
-"""
+
         #EXCEPCIONES
 def operation():
     try:
@@ -139,4 +139,53 @@ except ValueError as Edad_negativa: #alias de la excepcion
 
 print("End program")
 
+"""
+            #POO
+#Clase: Define la forma de un objeto.
+#Objeto: Instancia de una clase. Tiene atributos y metodos.
+#Encapsulamiento: Solo permite usar atributos y metodos dentro de la clase
+#Constructor: Estado inicial de todos los objetos que se creen.
 
+class Dog():
+    state = ""
+
+    def __init__(self, color, size): #constructor
+        self.__name = "" #encapsulamiento del atributo name -> "__"
+        self.color = color 
+        self.size = size
+        self.age = ""
+        self.weight = 0
+
+    def print_data(self):
+        print("El perro se llama ",self.__name," su color es ",self.color," y su tamanio es ",self.size," y es ", self.age)
+
+    def colocar_nombre(self,name): #Setter: Estableciendo valor a un atributo encapsulado
+        self.__name = name
+
+    def obtener_nombre(self): #Getter: Obteniendo valor de un atributo encapsulado
+        return self.__name
+    
+    def __state_salud(self,weight): #Método encapsulado -> "__"
+        if(weight>20):
+            self.state ="sobrepeso"
+        else:
+            self.state ="saludable"
+        return self.state
+
+    def info_dog(self,solicitud):
+        if(solicitud):
+            return self.__state_salud(self.weight) #llamando metodo encapsulado
+
+dog1 = Dog("negro","mediano") #instancia de "Dog"
+dog1.__name = "pulpito" #Por el encapsulamiento no es posible modificarlo
+print("###################################")
+dog1.print_data() 
+dog1.colocar_nombre("Bombom") #Usando setter para colocar nombre
+print("###################################")
+print("El nombre del perrito es ",
+dog1.obtener_nombre()) #Usando getter para obtener nombre
+dog1.age = "adulto"
+dog1.print_data() 
+print("##############Estado#####################")
+dog1.weight = (int)(input("Ingrese peso: "))
+print("Estado: ",dog1.info_dog(input("Info (True): ")))
