@@ -139,7 +139,7 @@ except ValueError as Edad_negativa: #alias de la excepcion
 
 print("End program")
 
-"""
+
             #POO
 #Clase: Define la forma de un objeto.
 #Objeto: Instancia de una clase. Tiene atributos y metodos.
@@ -189,3 +189,35 @@ dog1.print_data()
 print("##############Estado#####################")
 dog1.weight = (int)(input("Ingrese peso: "))
 print("Estado: ",dog1.info_dog(input("Info (True): ")))
+
+"""
+        #Herencia
+#Es cuando se heredan los atributos y métodos de una clase
+class Mascota():
+    def __init__(self, name, color):
+        self.nameMascota = name
+        self.colorMascota = color
+    
+    def muestra_atributos(self):
+        print("Tu mascota se llama ",self.nameMascota, ". Su color es ", self.colorMascota)
+#Dog hereda de Mascota
+class Dog(Mascota): #Nota: Si hubiesen 2 padres, el constructor siempre tomara al 1er parametro
+    correr = False #Fuera de metodos no se antepone "self"
+
+    def __init__(self, name, color, size):
+        super().__init__(name, color) #Llamando al constructor del padre
+        self.size = size #atributo del hijo
+
+    def corre(self):
+        print(f"{self.nameMascota} esta corriendo") #cuando se hereda, se usan las variables del padre
+
+    def muestra_atributos(self): #Sobreescribiendo metodo del padre, siempre el hijo sobreescribira el metodo del padre.
+        super().muestra_atributos() #Llamando al metodo del padre
+        print("Su tamanio es: ", self.size)
+
+bombom = Mascota("bombom","negro")
+bombom.muestra_atributos()
+#bombom.corre()
+
+    #Uso del isinstance()
+print(isinstance(bombom, Dog)) #Mascota no siempre sera Dog
